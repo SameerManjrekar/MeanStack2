@@ -1,0 +1,30 @@
+{
+  "name": "meanapp",
+  "version": "1.0.0",
+  "description": "Mean Stack 2 App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SameerManjrekar/MeanStack2.git"
+  },
+  "keywords": [
+    "This",
+    "isMean",
+    "Stack",
+    "2",
+    "Tutorial"
+  ],
+  "author": "Sameer Manjrekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SameerManjrekar/MeanStack2/issues"
+  },
+  "homepage": "https://github.com/SameerManjrekar/MeanStack2#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.10.6"
+  }
+}
