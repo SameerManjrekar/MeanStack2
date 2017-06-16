@@ -1,0 +1,41 @@
+<div class="page-header"> 
+  Login
+</div>
+
+<div class="row show-hide-message"> 
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<form [formGroup]="loginForm" (submit)="onLoginSubmit()">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <div [ngClass]="{ 'has-error': (loginForm.get('username').errors && loginForm.get('username').dirty), 
+                'has-success': loginForm.get('username').valid && loginForm.get('username').dirty }">
+      <input type="text" class="form-control" name="username" formControlName="username" 
+        placeholder="Username" autocomplete="off">
+        <ul class="help-block">
+          <li *ngIf="loginForm.get('username').errors?.required && loginForm.get('username').dirty">
+            This field is required
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="form-group">
+      <label for="password">Password</label>
+      <div [ngClass]="{ 'has-error': (loginForm.get('password').errors && loginForm.get('password').dirty), 
+          'has-success': loginForm.get('password').valid && loginForm.get('password').dirty }">
+        <input type="password" class="form-control" name="password" formControlName="password"
+          placeholder="Password" autocomplete="off">
+          <ul class="help-block">
+            <li *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').dirty">
+              This field is required
+            </li>
+          </ul>
+      </div>
+  </div>
+
+  <input type="submit" [disabled]="!loginForm.valid || processing" class="btn btn-primary" value="Login">
+</form>
